@@ -21,3 +21,9 @@ from six import string_types, iteritems
 >>> list(enumerate(seasons, start=1))       # 下标从 1 开始
 [(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
 ```
+
+```Python
+# numpy.transpose
+kernels = utils.get_variable(np.transpose(kernels, (1, 0, 2, 3)), name=name + "_w")
+
+```

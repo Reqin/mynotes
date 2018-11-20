@@ -14,7 +14,7 @@ from six import string_types, iteritems
 ```
 
 ```Python
->>>seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+>>> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 >>> list(enumerate(seasons))
 [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
 >>> list(enumerate(seasons, start=1))       # 下标从 1 开始

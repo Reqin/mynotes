@@ -25,5 +25,4 @@ from six import string_types, iteritems
 ```Python
 # numpy.transpose() 交换轴，默认为转置
 kernels = utils.get_variable(np.transpose(kernels, (1, 0, 2, 3)), name=name + "_w")
-
 ```

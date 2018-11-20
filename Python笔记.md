@@ -14,6 +14,7 @@ from six import string_types, iteritems
 ```
 
 ```Python
+# enumerate() 此函数将可遍历的数据对象组合为一个索引序列。
 >>> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 >>> list(enumerate(seasons))
 [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]

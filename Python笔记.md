@@ -29,6 +29,9 @@ kernels = utils.get_variable(np.transpose(kernels, (1, 0, 2, 3)), name=name + "_
 
 ```Python
 '''
+①tf.flags.DEFINE_xxx() 
+②FLAGS = tf.flags.FLAGS 
+③FLAGS._parse_flags()
 用于帮助我们添加命令行的可选参数。 
 也就是说利用该函数我们可以实现在命令行中选择需要设定的参数来运行程序， 
 可以不用反复修改源代码中的参数，直接在命令行中进行参数的设定。

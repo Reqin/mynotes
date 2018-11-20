@@ -45,3 +45,25 @@ tf.flags.DEFINE_string("model_dir", "Model_zoo/", "Path to vgg model mat")
 tf.flags.DEFINE_bool('debug', "False", "Debug mode: True/ False")
 tf.flags.DEFINE_string('mode', "train", "Mode train/ test/ visualize")
 ```
+
+
+```python
+# 参数可视化
+tf.summary.histogram(var.op.name + "/activation", var)
+tf.summary.scalar(var.op.name + "/sparsity", tf.nn.zero_fraction(var))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

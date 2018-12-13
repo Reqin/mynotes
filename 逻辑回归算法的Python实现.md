@@ -46,7 +46,7 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
       
   ```
   梯度：
-  $$\frac{\delta}{\delta\theta}J(\theta)=\frac{1}{m}(X^T(h-y))$$
+  $$\frac{\delta}{\delta\theta}J(\theta)=\frac{1}{m}(X^T(h-y)+L\theta)$$
   ```Python?linenums&fancy=0
   #
   ```

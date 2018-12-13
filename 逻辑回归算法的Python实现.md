@@ -11,4 +11,4 @@ grammar_cjkRuby: true
 >   $y=w_0 + w_1x_1+...+w_nx_n$
 >   *其中$x_1,x_2.x_n$是样本的n个特征*
 > * sigmod函数：
->   $f(x)=\frac{1}{1+e^x}$
+>   $$f(x)=\frac{1}{1+e^x}$$

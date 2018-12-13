@@ -36,7 +36,7 @@ $$L(\theta)=\prod_{i=1}^{m}(h_\theta(x^i))^{y^i}(1-h_\theta(x^i))^{1-y^i}$$
 * 在求梯度的时候，连乘的直接微分相对复杂，可以使用log把连乘变成相加
 * 概率值是浮点数，多个浮点数相乘易造成浮点数下溢，可以使用log把相乘变成相加
 所以我们使用对数似然：
-$$l(\theta)=log(L(\theta))=\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)(1-h_\theta(x^i))$$
+$$l(\theta)=log(L(\theta))=\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))$$
 
 在进行前向估计之后，我们可以得出$y$为输出正例的概率，则输出反例的概率为$1-y$,可以取两者的之比并且取对数得到对数几率,因此logistc回归又称为对数几率回归：
 $$log\frac{y}{1-y}=W^TX+b$$

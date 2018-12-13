@@ -12,4 +12,4 @@ grammar_cjkRuby: true
 >   *其中$x_1,x_2.x_n$是样本的n个特征*
 > * sigmod函数：
 >   $$f(x)=\frac{1}{1+e^x}$$
->   <img src="/media/D/www/0_py/ml/logistic_regression/draw.jpg" />
+>   <img src="https://gitee.com/relnz/mynotes/blob/master/images/draw.jpg" />

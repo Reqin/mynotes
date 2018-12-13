@@ -40,11 +40,11 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
   $$J(\theta)=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H)) + \frac{\lambda L\theta^2}{2}]$$
   *其中$\lambda$为超参数，自行调节,由于超参数的存在，所以可以不除2*
   $$L：\begin{bmatrix}
-  1&0&\cdots&0 \\
+  0&0&\cdots&0 \\
   0&1&\cdots&0\\
   \vdots&\vdots&\ddots&\vdots\\
   0&0&\cdots&1\\
-  \end{bmatrix}$$
+  \end{bmatrix}\in R^{(n+1)*(n+1)}$$
   ```Python?linenums&fancy=0
   # 损失函数
   def cost(W,X,Y):

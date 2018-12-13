@@ -36,3 +36,5 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
   $$J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[(-y^ilog(h_w(x^i))-1-y^i)log(1-h_w(x^i))]$$
   矩阵运算表示：
   $$J(\theta)=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H))]$$
+  梯度：
+  $$\frac{\delta}{\delta\theta}J(\theta)=\frac{1}{m}(X^T(h-y))$$

@@ -5,4 +5,7 @@ grammar_cjkRuby: true
 ---
 
 
-欢迎使用 **{小书匠}(xiaoshujiang)编辑器**，您可以通过 `小书匠主按钮>模板` 里的模板管理来改变新建文章的内容。
+### Logistic回归
+> Logistic逻辑回归是线性回归模型的一种函数映射
+> * 线性回归模型：
+>   $\sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t$

@@ -24,8 +24,8 @@ $$h(x)=\frac{1}{1+e^{-W^TX}}$$
 
 设正例为1，反例为零，在前向估计之后，可以得到：
 $$\begin{cases}
+P(y=1|x;\theta)=h_\theta(x)\\
 P(y=0|x;\theta)=1-h_\theta(x)\\
-P(y=0|x;\theta)=h_\theta(x)\\
 \end{cases}
 $$
 

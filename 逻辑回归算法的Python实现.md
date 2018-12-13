@@ -29,14 +29,23 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
   ```Python?linenums&fancy=0
    # 前向预测算法
    def forward_prediction(X,W):
-       Y = X.dot(W.T)
-       return np.exp(-Y)
+       Y_ = X.dot(W.T)
+       return np.exp(-Y_)
   ```
 * 损失函数：
   $$J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[(-y^ilog(h_w(x^i))-1-y^i)log(1-h_w(x^i))]$$
   矩阵运算表示：
   $$J(\theta)=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H))]$$
+  为了解决过拟合的问题，给损失函数添加正则项：
+  $$J(\theta)=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H)) + \frac{\lambda L\theta^2}{2}]$$
+  ```Python?linenums&fancy=0
+  # 损失函数
+  def cost(W,X,Y):
+      Y_ = for
+      
+  ```
   梯度：
   $$\frac{\delta}{\delta\theta}J(\theta)=\frac{1}{m}(X^T(h-y))$$
   ```Python?linenums&fancy=0
+  #
   ```

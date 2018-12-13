@@ -45,7 +45,7 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
       Y_ = for
       
   ```
-* 梯度：
+* 对于损失函数求导可得到各个参数的梯度：
   $$\frac{\delta}{\delta\theta}J(\theta)=\frac{1}{m}(X^T(h-y)+L\theta)$$
   ```Python?linenums&fancy=0
   #

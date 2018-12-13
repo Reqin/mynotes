@@ -44,6 +44,7 @@ $$\frac{\delta{}l(\theta)}{\delta(\theta_j)}=\sum_{i=1}^m\left(\frac{y^i}{h_\the
 $$loss=-\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))$$
 参数$\theta$的学习规则：
 $$\theta_j:=\theta_j+\alpha(y^i-h_\theta(x^i))x_j^i$$
+*此时我们做的是随机梯度上升*
 
 在进行前向估计之后，我们可以得出$y$为输出正例的概率，则输出反例的概率为$1-y$,可以取两者的之比并且取对数得到对数几率,因此logistc回归又称为对数几率回归：
 $$log\frac{y}{1-y}=W^TX+b$$

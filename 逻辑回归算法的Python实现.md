@@ -30,7 +30,7 @@ P(y=0|x;\theta)=1-h_\theta(x)\\
 $$
 可以简化为：
 $$P(y|x;\theta)=(h_\theta(x))^y(1-h_\theta(x))^{1-y}$$
-为了做参数估计,对其做似然：
+为了做参数估计,对其做最大似然估计：
 $$L(\theta)=\prod_{i=1}^{m}(h_\theta(x^i))^{y^i}(1-h_\theta(x^i))^{1-y^i}$$
 因为：
 * 在求梯度的时候，连乘的直接微分相对复杂，可以使用log把连乘变成相加
@@ -39,7 +39,7 @@ $$L(\theta)=\prod_{i=1}^{m}(h_\theta(x^i))^{y^i}(1-h_\theta(x^i))^{1-y^i}$$
 所以我们使用对数似然：
 $$l(\theta)=log(L(\theta))=\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))$$
 参数$\theta$的梯度：
-$$\frac{\delta{}l(\theta)}{\delta(\theta_j)}=\sum_{i=1}^m\left(\frac{y^i}{h_\theta(x^i)} - \frac{1-y^i}{1-h_\theta(x^i)}\right)\bullet{}\frac{\delta(h_\theta(x^i))}{\delta\theta_j}$$
+$$\frac{\delta{}l(\theta)}{\delta(\theta_j)}=\sum_{i=1}^m\left(\frac{y^i}{h_\theta(x^i)} - \frac{1-y^i}{1-h_\theta(x^i)}\right)\bullet{}\frac{\delta(h_\theta(x^i))}{\delta\theta_j}=\sum_{i=1}^{m}(y^i-g(\Theta^TX^i))\bullet{}x_j^i$$
 在进行前向估计之后，我们可以得出$y$为输出正例的概率，则输出反例的概率为$1-y$,可以取两者的之比并且取对数得到对数几率,因此logistc回归又称为对数几率回归：
 $$log\frac{y}{1-y}=W^TX+b$$
 当我们最后的对数几率越大的时候，相对应的结果越好，

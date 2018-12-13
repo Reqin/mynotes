@@ -33,4 +33,4 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
        return np.exp(-Y)
   ```
 * 损失函数
-  $$J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^ilog(h_w(x^i)) - (1-y^i)log(1-h_w(x^i))]$$
+  $$J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[-y^ilog(h_w(x^i) - (1-y^i)log(1-h_w(x^i)]$$

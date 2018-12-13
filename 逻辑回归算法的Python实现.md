@@ -26,3 +26,8 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
  * 前向算法
  $$f(x)=\frac{1}{1+e^{-W^TX}}$$
  *其中$X$为$x$构成的特征矩阵，$W$是由$w$构成的参数矩阵*
+   ```Python
+   # 前向预测算法
+   def forward_prediction(X,W):
+       return X.dot(W.T)
+   ```

@@ -38,6 +38,7 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
   $$J(\theta)=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H))]$$
   为了解决过拟合的问题，给损失函数添加正则项：
   $$J(\theta)=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H)) + \frac{\lambda L\theta^2}{2}]$$
+  *其中$\lambda$为超参数，自行调节*
   ```Python?linenums&fancy=0
   # 损失函数
   def cost(W,X,Y):

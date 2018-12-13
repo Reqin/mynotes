@@ -26,7 +26,7 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
 * 前向算法：
   $$h(x)=\frac{1}{1+e^{-W^TX}}$$
   *其中$X$为$x$构成的特征矩阵，$W$是由$w$构成的参数矩阵*
-  ```Python
+  ```Python?linenums&fancy=0
    # 前向预测算法
    def forward_prediction(X,W):
        Y = X.dot(W.T)
@@ -38,5 +38,6 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
   $$J(\theta)=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H))]$$
   梯度：
   $$\frac{\delta}{\delta\theta}J(\theta)=\frac{1}{m}(X^T(h-y))$$
-  ```
-  ```
+  ````Python?linenums&fancy=1,3,5
+  颠三倒四
+  ````

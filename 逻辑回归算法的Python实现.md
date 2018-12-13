@@ -29,5 +29,6 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
    ```Python
    # 前向预测算法
    def forward_prediction(X,W):
-       return X.dot(W.T)
+       Y = X.dot(W.T)
+       return np.exp(-Y)
    ```

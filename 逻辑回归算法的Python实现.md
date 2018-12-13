@@ -29,7 +29,7 @@ P(y=0|x;\theta)=1-h_\theta(x)\\
 \end{cases}
 $$
 可以简化为：
-$$P(y|x;\theta)=(h_\theta(x))^y(1-h_\theta(x))^{1-y}$$
+$$P(y|x;\theta)=(h_\theta(x^i))^{y^i}(1-h_\theta(x^i))^{1-y^i}$$
 为了做参数估计,对其做似然：
 $$L(\theta)=\prod_{i=1}^{m}(h_\theta(x))^y(1-h_\theta(x))^{1-y}$$
 在进行前向估计之后，我们可以得出$y$为输出正例的概率，则输出反例的概率为$1-y$,可以取两者的之比并且取对数得到对数几率,因此logistc回归又称为对数几率回归：

@@ -12,4 +12,4 @@ grammar_cjkRuby: true
 >   *其中$x_1,x_2.x_n$是样本的n个特征*
 > * sigmod函数：
 >   $$f(x)=\frac{1}{1+e^x}$$
->   <img src="https://img-blog.csdnimg.cn/20181213135910774.jpg" />
+>   <center><img src="https://img-blog.csdnimg.cn/20181213135910774.jpg" height="200" width="500" /></center>

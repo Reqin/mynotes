@@ -23,7 +23,7 @@ $$h(x)=\frac{1}{1+e^{-W^TX}}$$
  * 在形成损失函数之后形成凸函数
 
 设正例为1，反例为零，在前向估计之后，可以得到：
-$$\begin{array}
+$$\begin{array} \
 P(y=1|x;\theta)=h_\theta(x)\\
 P(y=0|x;\theta)=1-h_\theta(x)\\
 \end{array}

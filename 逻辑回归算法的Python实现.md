@@ -38,6 +38,6 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
   $$J(\theta)=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H))]$$
   梯度：
   $$\frac{\delta}{\delta\theta}J(\theta)=\frac{1}{m}(X^T(h-y))$$
-  ````Python?linenums&fancy=1,3,5
+  ````Python?linenums&fancy=0
   颠三倒四
   ````

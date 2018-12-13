@@ -33,4 +33,4 @@ $$f(x)=\frac{1}{1+e^{-W^TX}}$$
        return np.exp(-Y)
   ```
 * 损失函数
-  $$J(\theta)=\frac{1}{mm}$$
+  $$J(\theta)=\frac{1}{m}$$

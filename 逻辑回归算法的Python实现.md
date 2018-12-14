@@ -10,7 +10,7 @@ grammar_cjkRuby: true
 Logistic逻辑回归是线性回归模型的一种函数映射,线性回归的预测是根据模型特征的线性叠加，在经过sigmoid函数之后模型就变成了非线性的，在$x=0$的时候梯度很高，在$|x|$越大时梯度越小。Logistic回归被用在二分类问题里面，其定义域为$(0,1)$，在具体问题里面可以看做二分类的某一类的概率。
 * 线性回归模型：
   $$f(x)=w_0 + w_1x_1+...+w_nx_n=\Theta^T{X}$$
-  *其中$x_1,x_2.x_n$是样本的n个特征,$X=\begin{bmatrix}1&x_1&x_2&\cdots&x_n \end{bmatrix}$*
+  *其中$x_1,x_2.x_n$是样本的n个特征，$\Theta=\begin{bmatrix}w_0&w_1&w_2&\cdots&w_n\end{bmatrix}$，$X=\begin{bmatrix}1&x_1&x_2&\cdots&x_n\end{bmatrix}$*
 * sigmod函数：
   $$g(x)=\frac{1}{1+e^{-x}}$$
   <center><img src="https://img-blog.csdnimg.cn/20181213135910774.jpg" height="200" width="500" /></center>

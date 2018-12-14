@@ -41,12 +41,12 @@ $$l(\theta)=log(L(\theta))=\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\t
 参数$\theta$的梯度：
 $$\frac{\delta{}l(\theta)}{\delta(\theta_j)}=\sum_{i=1}^m\left(\frac{y^i}{h_\theta(x^i)} - \frac{1-y^i}{1-h_\theta(x^i)}\right)\bullet{}\frac{\delta(h_\theta(x^i))}{\delta\theta_j}=\sum_{i=1}^{m}(y^i-g(\Theta^TX^i))\bullet{}x_j^i$$
 将对数似然取负，那么得到的函数就可以当做损失函数：
-$$loss=-\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))$$
+$$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]$$
 参数$\theta$的学习规则：
 $$\theta_j:=\theta_j+\alpha(y^i-h_\theta(x^i))x_j^i$$
 *此时我们做的是随机梯度上升，$\alpha$是超参数，我们定义的学习率*
 为了防止过拟合，我们把损失函数加上正则项：
-$$loss=-\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))+\lambda\sum_{j=1}^n{\theta_j}^2$$
+$$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambda\sum_{j=1}^n{\theta_j}^2$$
 
 
 
@@ -62,7 +62,7 @@ $$loss=-\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))+\lambda\
 		return np.divide(1, np.add(1, np.exp(-f)))
   ```
 * 损失函数：
-  $$loss=-\sum_{i=1}^{m}[(-y^ilog(h_w(x^i))-(1-y^i)log(1-h_w(x^i))]+\lambda\sum_{j=1}^n{\theta_j}^2$$
+  $$loss=\sum_{i=1}^{m}(-y^ilog(h_w(x^i))-\sum_{i=1}^{m}(1-y^i)log(1-h_w(x^i))+\lambda\sum_{j=1}^n{\theta_j}^2$$
   矩阵运算表示：
   $$loss=\frac{1}{m}[Y^Tlog(H)-((1-Y)^T(1-H))]$$
   为了解决过拟合的问题，给损失函数添加正则项：

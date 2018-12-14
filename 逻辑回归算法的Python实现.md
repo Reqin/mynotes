@@ -79,5 +79,9 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
 * 对于损失函数求导可得到各个参数的梯度：
   $$\frac{\delta{}loss(\theta)}{\delta\theta}=\frac{1}{m}(X^T(H-Y)+L\Theta)$$
   ```Python?linenums&fancy=0
-  #
+  # 参数梯度
+  def gradient(x, h, y, alpha):
+      count = h.shape[0]
+      grad = np.divide(np.multiply(alpha, np.matmul(np.add(-y, h).T, x)), count)
+    return grad
   ```

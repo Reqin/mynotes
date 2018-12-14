@@ -76,7 +76,7 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
   # 带正则项的损失函数
   def loss(weights, h, y, _lambda):
 		count = y.shape[0]
-		loss_1 = -np.dot(y.T, np.log(h))
+		loss_1 = -np.matmul(y.T, np.log(h))
 		loss_0 = -np.matmul(np.add(1, -y).T, np.log(np.add(1, -h)))
 		regularization_term = np.multiply(np.matmul(weights, weights.T), _lambda)
 		loss_ = np.divide((loss_1 + loss_0 + regularization_term), count)

@@ -63,13 +63,11 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
   ```
 * 损失函数：
 	  $$loss=-\sum_{i=1}^{m}(y^ilog(h_w(x^i))-\sum_{i=1}^{m}(1-y^i)log(1-h_w(x^i))+\lambda\sum_{j=1}^n{\theta_j}^2$$` 
-  如果我们使用全局矩阵运算表示：
-  $$loss=\frac{1}{m}[Y^Tlog(H)-((1-Y)^T(1-H))]$$
-  为了解决过拟合的问题，给损失函数添加正则项：
-  $$J(\theta)=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H)) + \lambda{}L\Theta^2]$$
-  *其中$\lambda$为超参数，自行调节,由于超参数的存在，所以可以不除2*
+  使用矩阵运算表示：
+  $$loss=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H)) + \lambda{}L\Theta^2]$$
+  *其中$\lambda$为超参数，$\lambda$越小，越容易过拟合，越大，越容易欠拟合*
   $$L：\begin{bmatrix}
-  0&0&\cdots&0 \\
+  1&0&\cdots&0 \\
   0&1&\cdots&0\\
   \vdots&\vdots&\ddots&\vdots\\
   0&0&\cdots&1\\

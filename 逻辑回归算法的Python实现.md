@@ -81,7 +81,6 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
 		regularization_term = np.multiply(np.matmul(weights, weights.T), _lambda)
 		loss_ = np.divide((loss_1 + loss_0 + regularization_term), count)
 		return loss_
-      
   ```
 * 对于损失函数求导可得到各个参数的梯度：
   $$\frac{\delta{}loss(\theta)}{\delta\theta}=\frac{1}{m}(X^T(h-y)+L\theta)$$

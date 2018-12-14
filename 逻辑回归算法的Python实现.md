@@ -46,7 +46,7 @@ $$loss=-\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))$$
 $$\theta_j:=\theta_j+\alpha(y^i-h_\theta(x^i))x_j^i$$
 *此时我们做的是随机梯度上升，$\alpha$是超参数，我们定义的学习率*
 为了防止过拟合，我们把损失函数加上正则项：
-$$loss=-\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))+\lambda\sum_{j=0}^m$$
+$$loss=-\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))+\lambda\sum_{j=0}^n$$
 
 
 

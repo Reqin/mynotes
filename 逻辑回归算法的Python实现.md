@@ -58,8 +58,8 @@ $$loss=-\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))+\lambda\
   ```Python?linenums&fancy=0
    # 前向预测算法
 	def forward_prediction(x, weights):
-    f = np.matmul(x, weights.T)
-    return np.divide(1, np.add(1, np.exp(-f)))
+		f = np.matmul(x, weights.T)
+		return np.divide(1, np.add(1, np.exp(-f)))
   ```
 * 损失函数：
   $$J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[(-y^ilog(h_w(x^i))-1-y^i)log(1-h_w(x^i))]$$

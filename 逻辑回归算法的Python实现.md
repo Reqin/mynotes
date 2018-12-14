@@ -51,7 +51,7 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
 
 
 
-#### 代码部分
+#### 代码浅析
 * 前向算法：
   $$h(x)=\frac{1}{1+e^{-\Theta^TX}}$$
   *其中$X$为$x$构成的特征矩阵，$\Theta$是由$w$构成的参数矩阵*
@@ -85,3 +85,6 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
       grad = np.divide(np.multiply(alpha, np.matmul(np.add(-y, h).T, x)), count)
       return grad
   ```
+  
+  
+ 

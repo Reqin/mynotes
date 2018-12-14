@@ -73,9 +73,14 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
   0&0&\cdots&1\\
   \end{bmatrix}\in R^{(n+1)*(n+1)}$$
   ```Python?linenums&fancy=0
-  # 损失函数
-  def cost(W,X,Y):
-      Y_ = for
+  # 带正则项的损失函数
+  def loss(weights, h, y, _lambda):
+		count = y.shape[0]
+		loss_1 = -np.dot(y.T, np.log(h))
+		loss_0 = -np.matmul(np.add(1, -y).T, np.log(np.add(1, -h)))
+		regularization_term = np.multiply(np.matmul(weights, weights.T), _lambda)
+		loss_ = np.divide((loss_1 + loss_0 + regularization_term), count)
+		return loss_
       
   ```
 * 对于损失函数求导可得到各个参数的梯度：

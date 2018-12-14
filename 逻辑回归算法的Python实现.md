@@ -83,5 +83,5 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
   def gradient(x, h, y, alpha):
       count = h.shape[0]
       grad = np.divide(np.multiply(alpha, np.matmul(np.add(-y, h).T, x)), count)
-    return grad
+      return grad
   ```

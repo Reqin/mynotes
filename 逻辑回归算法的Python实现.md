@@ -90,6 +90,7 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
  #### 示例代码
  ```Python?linenums&fancy=0
  # --*-- coding:utf8 --*--
+# --*-- coding:utf8 --*--
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -148,30 +149,28 @@ def main():
     x = data[:, :2]
     y = np.array([data[:, 2]]).T
     weights = np.zeros((1, x.shape[1]))
-    _lambda = 0.01
-    _alpha = 0.1
+    _lambda = 0.001
+    _alpha = 1
     loss_arr = []
-    i = 10000
+    i = 1000
     for _ in range(i):
         h = forward_prediction(x=x, weights=weights)
         _loss = loss(weights, h, y, _lambda)
         grad = gradient(x, h, y, _alpha)
-        # print(grad)
-        # exit()
         weights = weights - np.multiply(grad, _alpha)
-        # print(weights)
         loss_arr.append(_loss[0][0])
     h = forward_prediction(x=x, weights=weights)
     real = np.array([data[:, 2]]).T
-    _ = np.append(h, real,axis=1)
-    print(_)
-    exit()
-    print(h)
+    _ = np.append(h, real, axis=1)
+    for __ in _:
+        print(__)
     x_axis = np.arange(0, i, 1)
     plt.plot(x_axis, loss_arr)
     plt.show()
+    plt.draw()
 
 
 if __name__ == '__main__':
     main()
+
  ```

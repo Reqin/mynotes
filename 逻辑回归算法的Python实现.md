@@ -50,8 +50,8 @@ $$\theta_j:=\theta_j+\alpha(y^i-h_\theta(x^i))x_j^i$$
 
 #### 代码部分
 * 前向算法：
-  $$h(x)=\frac{1}{1+e^{-W^TX}}$$
-  *其中$X$为$x$构成的特征矩阵，$W$是由$w$构成的参数矩阵*
+  $$h(x)=\frac{1}{1+e^{-\Theta^TX}}$$
+  *其中$X$为$x$构成的特征矩阵，$\Theta$是由$w$构成的参数矩阵*
   ```Python?linenums&fancy=0
    # 前向预测算法
    def forward_prediction(X,W):

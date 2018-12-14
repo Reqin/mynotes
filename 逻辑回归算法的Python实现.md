@@ -62,7 +62,7 @@ $$loss=-\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))+\lambda\
 		return np.divide(1, np.add(1, np.exp(-f)))
   ```
 * 损失函数：
-  $$J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[(-y^ilog(h_w(x^i))-1-y^i)log(1-h_w(x^i))]$$
+  $$J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[(-y^ilog(h_w(x^i))-1-y^i)log(1-h_w(x^i))]+\lambda\sum_{j=1}^n{\theta_j}^2$$
   矩阵运算表示：
   $$J(\theta)=\frac{1}{m}[-Y^Tlog(H)-((1-Y)^T(1-H))]$$
   为了解决过拟合的问题，给损失函数添加正则项：

@@ -88,3 +88,91 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
   
   
  #### 示例代码
+ ```Python?linenums&fancy=0
+ # --*-- coding:utf8 --*--
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def load_data():
+    data0, data1 = create_data()
+    data0 = np.append(data0, np.zeros((data0.shape[0], 1)), axis=1)
+    data1 = np.append(data1, np.ones((data1.shape[0], 1)), axis=1)
+    data = np.append(data0, data1, axis=0)
+    np.random.shuffle(data)
+    return data
+
+
+# 制作数据
+def create_data():
+    x_s = np.random.uniform(-1, 1, 1000)
+    y_s = [np.random.uniform(-limit, limit) for limit in np.sqrt(1 - np.square(x_s))]
+    x_1, y_1, x_2, y_2 = [], [], [], []
+    for i, x in enumerate(x_s):
+        if (x + y_s[i]) > x * y_s[i]:
+            x_1.append(x)
+            y_1.append(y_s[i])
+        else:
+            x_2.append(x)
+            y_2.append(y_s[i])
+    data0 = np.append(np.array([x_1]).T, np.array([y_1]).T, axis=1)
+    data1 = np.append(np.array([x_2]).T, np.array([y_2]).T, axis=1)
+    return data0, data1
+
+
+# 前向预测算法
+def forward_prediction(x, weights):
+    f = np.matmul(x, weights.T)
+    return np.divide(1, np.add(1, np.exp(-f)))
+
+
+# 带正则项的损失函数
+def loss(weights, h, y, _lambda):
+    count = y.shape[0]
+    loss_1 = -np.matmul(y.T, np.log(h))
+    loss_0 = -np.matmul(np.add(1, -y).T, np.log(np.add(1, -h)))
+    regularization_term = np.multiply(np.matmul(weights, weights.T), _lambda)
+    loss_ = np.divide((loss_1 + loss_0 + regularization_term), count)
+    return loss_
+
+
+# 参数梯度
+def gradient(x, h, y, alpha):
+    count = h.shape[0]
+    grad = np.divide(np.multiply(alpha, np.matmul(np.add(-y, h).T, x)), count)
+    return grad
+
+
+def main():
+    data = load_data()
+    x = data[:, :2]
+    y = np.array([data[:, 2]]).T
+    weights = np.zeros((1, x.shape[1]))
+    _lambda = 0.01
+    _alpha = 0.1
+    loss_arr = []
+    i = 10000
+    for _ in range(i):
+        h = forward_prediction(x=x, weights=weights)
+        _loss = loss(weights, h, y, _lambda)
+        grad = gradient(x, h, y, _alpha)
+        # print(grad)
+        # exit()
+        weights = weights - np.multiply(grad, _alpha)
+        # print(weights)
+        loss_arr.append(_loss[0][0])
+    h = forward_prediction(x=x, weights=weights)
+    real = np.array([data[:, 2]]).T
+    _ = np.append(h, real,axis=1)
+    print(_)
+    exit()
+    print(h)
+    x_axis = np.arange(0, i, 1)
+    plt.plot(x_axis, loss_arr)
+    plt.show()
+
+
+if __name__ == '__main__':
+    main()
+
+ ```

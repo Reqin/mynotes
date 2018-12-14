@@ -83,7 +83,7 @@ $$loss=-\sum_{i=1}^{m}[y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))]+\lambd
 		return loss_
   ```
 * 对于损失函数求导可得到各个参数的梯度：
-  $$\frac{\delta{}loss(\theta)}{\delta\theta}=\frac{1}{m}(X^T(h-y)+L\theta)$$
+  $$\frac{\delta{}loss(\theta)}{\delta\theta}=\frac{1}{m}(X^T(H-Y)+L\theta)$$
   ```Python?linenums&fancy=0
   #
   ```

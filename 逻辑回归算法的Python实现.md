@@ -52,20 +52,14 @@ $$loss=-\sum_{i=1}^{m}y^ilog(h_\theta(x^i))+(1-y^i)log(1-h_\theta(x^i))+\lambda\
 
 
 #### 代码部分
-* 初始化参数：
-  ```Python
-  #初始化参数
-  def init():
-      
-  ```
 * 前向算法：
   $$h(x)=\frac{1}{1+e^{-\Theta^TX}}$$
   *其中$X$为$x$构成的特征矩阵，$\Theta$是由$w$构成的参数矩阵*
   ```Python?linenums&fancy=0
    # 前向预测算法
-   def forward_prediction(X,W):
-       Y_ = X.dot(W.T)
-       return np.exp(-Y_)
+	def forward_prediction(x, weights):
+    f = np.matmul(x, weights.T)
+    return np.divide(1, np.add(1, np.exp(-f)))
   ```
 * 损失函数：
   $$J(\theta)=\frac{1}{m}\sum_{i=1}^{m}[(-y^ilog(h_w(x^i))-1-y^i)log(1-h_w(x^i))]$$

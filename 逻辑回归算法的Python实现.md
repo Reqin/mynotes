@@ -5,6 +5,20 @@ grammar_cjkRuby: true
 ---
 ---
 
+<html>
+<div class="content">
+    <input v-model="newLine" v-on:keyup.enter="addLine">
+    <ul>
+        <li v-for="line in table">
+            <span>{{ line.text }}__{{line.index}}</span>
+            <button v-on:click="removeLine(line.index)">X</button>
+        </li>
+        <button v-on:click="removeAll">removeAll</button>
+    </ul>
+</div>
+</body>
+<script type="text/javascript" src="load.js"></script>
+</html>
 ### Logistic回归
 #### 原理浅析
 Logistic逻辑回归是线性回归模型的一种函数映射,线性回归的预测是根据模型特征的线性叠加，在经过sigmoid函数之后模型就变成了非线性的，在$x=0$的时候梯度很高，在$|x|$越大时梯度越小。Logistic回归被用在二分类问题里面，其定义域为$(0,1)$，在具体问题里面可以看做二分类的某一类的概率。

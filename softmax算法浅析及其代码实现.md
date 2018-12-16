@@ -10,4 +10,4 @@ grammar_cjkRuby: true
 对于使用logistics函数来解决二分类的问题来说，我们的损失函数是：
 $$loss(\theta)=-\sum_{i=1}^m[y^ilog(h_\theta(x^i)+(1-y^i)log(1-h_\theta(x^i))]$$
 对于参数$\theta$进行学习的梯度是：
-$$gradient=\frac{1}{m}\sum_{i=0}$$
+$$gradient_{\theta_j}=\frac{1}{m}\sum_{i=1}^m()$$

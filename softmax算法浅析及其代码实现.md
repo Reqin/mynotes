@@ -11,6 +11,6 @@ grammar_cjkRuby: true
 $$loss(\theta)=-\sum_{i=1}^m[y^ilog(h_\theta(x^i)+(1-y^i)log(1-h_\theta(x^i))]$$
 对于参数$\theta$进行学习的梯度是：
 $$gradient_{\theta_j}=\frac{1}{m}\sum_{i=1}^m(h^i-y^i)\bullet{}x_j^i$$
-可以得到参数$\theta$的学习规则
+可以得到参数$\theta$的学习规则：
 **现在我们需要使用softmax回归去进行多分类算法模型的学习**
 

@@ -20,7 +20,7 @@ $$\Theta=
 \theta_1^1&\theta_2^1&\cdots&\theta_n^1\\
 \theta_1^2&\theta_2^2&\cdots&\theta_n^2\\
 \vdots&\vdots&\ddots&\vdots\\
-\theta_1^1&\theta_2^1&\cdots&\theta_n^k\\
+\theta_1^k&\theta_2^k&\cdots&\theta_n^k\\
 \end{bmatrix}
 $$
 k组权值与原始特征经过模型，可以得到在每一类特征下的类概率值：

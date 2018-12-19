@@ -14,7 +14,7 @@ $$gradient_{\theta_j}=\frac{1}{m}\sum_{i=1}^m(h^i-y^i)\bullet{}x_j^i$$
 可以得到参数$\theta$的学习规则：
 $$\theta_j:=\theta_j+\alpha(y^i-h^i)\bullet{}x_j^i$$
 **现在我们需要使用softmax回归去进行多分类算法模型的学习**
-假设我们现在有m条数据，其中包含k类结果和n类特征，为了得出每一类的概率，我们就需要有k组权值：
+假设我们现在有m条数据，其中包含k类输出和n类特征，为了得出每一类的概率，我们就需要有k组权值：
 $$\Theta=
 \begin{bmatrix}
 \theta_1^1&\theta_2^1&\cdots&\theta_n^1\\

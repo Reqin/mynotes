@@ -17,9 +17,10 @@ $$\theta_j:=\theta_j+\alpha(y^i-h^i)\bullet{}x_j^i$$
 假设我们现在有k类数据，包含n类特征，为了得出每一类的概率，我们就需要有k组权值：
 $$\Theta=
 \begin{bmatrix}
-\theta_1^1&0&0\\
-0&1&0\\
-0&0&1\\
+\theta_1^1&\theta_2^1&\cdots&\theta_n^1\\
+\theta_1^1&\theta_2^1&\cdots&\theta_n^1\\
+\theta_1^1&\theta_2^1&\cdots&\theta_n^1\\
+\theta_1^1&\theta_2^1&\cdots&\theta_n^1\\
 \end{bmatrix}
 $$
 k组权值与原始特征经过模型，可以得到在每一类特征下的类概率值：

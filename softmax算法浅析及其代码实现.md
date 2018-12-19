@@ -19,7 +19,7 @@ $$\Theta=
 \begin{bmatrix}
 \theta_1^1&\theta_2^1&\cdots&\theta_n^1\\
 \theta_1^2&\theta_2^2&\cdots&\theta_n^2\\
-\theta_1^1&\theta_2^1&\cdots&\theta_n^1\\
+\vdots&\vdots&\ddots&\vdots\\
 \theta_1^1&\theta_2^1&\cdots&\theta_n^k\\
 \end{bmatrix}
 $$

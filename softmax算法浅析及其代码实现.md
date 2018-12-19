@@ -15,5 +15,5 @@ $$gradient_{\theta_j}=\frac{1}{m}\sum_{i=1}^m(h^i-y^i)\bullet{}x_j^i$$
 $$\theta_j:=\theta_j+\alpha(y^i-h^i)\bullet{}x_j^i$$
 **现在我们需要使用softmax回归去进行多分类算法模型的学习**
 可以推出其似然函数为：
-$$L(\theta)=\prod_{i=1}^m\prod_{j=1}^K$$
+$$L(\theta)=\prod_{i=1}^m\prod_{j=1}^k$$
 
